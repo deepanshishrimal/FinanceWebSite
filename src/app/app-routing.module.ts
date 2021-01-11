@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "admin-consumer-verify", component: AdminConsumerVerifyComponent },
   { path: "admin-dashboard", component: AdminDashboardComponent },
   { path: "change-password", component: ChangePasswordComponent },
-  { path: "consumer-dashboard", component: ConsumerDashboardComponent },
+  { path: "consumer-dashboard/:id", component: ConsumerDashboardComponent },
   { path: "forget-password", component: ForgetPasswordComponent },
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },

@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -17,7 +16,6 @@ import { AdminConsumerEditComponent } from './admin-consumer-edit/admin-consumer
 import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-
 import { OrderService } from './services/product-serives/order.service';
 import { ProductService } from './services/product-serives/product.service';
 
