@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { ICard } from '../models/consumer-models/icard';
-import { ICredit } from '../models/consumer-models/icredit';
-import { IPurchasedproducts } from '../models/consumer-models/ipurchasedproducts';
-import { IRecenttransactions } from '../models/consumer-models/IRecenttransactions';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { ConsumerServiceService } from '../services/consumer-services/consumer-service.service';
+
+import { ICard } from '../models/consumer-models/ICard';
+import { ICredit } from '../models/consumer-models/ICredit';
+import { IPurchasedProducts } from '../models/consumer-models/IPurchasedProducts';
+import { IRecentTransactions } from '../models/consumer-models/IRecentTransactions';
 
 @Component({
   selector: 'app-consumer-dashboard',
@@ -13,55 +14,60 @@ import { ConsumerServiceService } from '../services/consumer-services/consumer-s
   styleUrls: ['./consumer-dashboard.component.css']
 })
 export class ConsumerDashboardComponent implements OnInit {
- public username:string;
-  getcard:ICard; 
-  getcredit:ICredit;
-  getpurchasedproducts:IPurchasedproducts;
-  getrecenttransactions:IRecenttransactions;
-  //getpurchasedproducts:Observable<IPurchasedproducts>;
-  constructor(private consumerservice:ConsumerServiceService,private router:ActivatedRoute) { }
-  getCard(username:string)
-{
-  this.consumerservice.GetCardDetails(username).subscribe((card:ICard)=>{
-    this.getcard=card;
-    console.log(this.getcard);
+  public username: string;
+  getcard: ICard;
+  getcredit: ICredit;
+  getpurchasedproducts: IPurchasedProducts;
+  getrecenttransactions: IRecentTransactions;
 
-  })
-}
+  constructor(private consumerservice: ConsumerServiceService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
-getCredit(username:string)
-{
-  this.consumerservice.GetCreditDetails(username).subscribe((credit:ICredit)=>{
-    this.getcredit=credit;
-    console.log(this.getcredit);
+  getCard(username: string) {
+    this.consumerservice.GetCardDetails(username).subscribe((card: ICard) => {
+      this.getcard = card;
+      console.log(this.getcard);
+    }, error => {
+      window.alert(error);
+      this.router.navigate(["/home/"]);
+    })
+  }
 
-  })
-}
+  getCredit(username: string) {
+    this.consumerservice.GetCreditDetails(username).subscribe((credit: ICredit) => {
+      this.getcredit = credit;
+      console.log(this.getcredit);
+    }, error => {
+      window.alert(error);
+      this.router.navigate(["/home/"]);
+    })
+  }
 
-getProducts(username:string) 
-{  
-  //this.getpurchasedproducts = this.consumerservice.GetPurchasedProducts(username);  
-this.consumerservice.GetPurchasedProducts(username).subscribe((product:IPurchasedproducts)=>{
-  this.getpurchasedproducts=product;
-  console.log(this.getpurchasedproducts);
+  getProducts(username: string) {
+    this.consumerservice.GetPurchasedProducts(username).subscribe((product: IPurchasedProducts) => {
+      this.getpurchasedproducts = product;
+      console.log(this.getpurchasedproducts);
+    }, error => {
+      window.alert(error);
+      this.router.navigate(["/home/"]);
+    })
+  }
 
-})
-}  
-getTransactions(username:string)
-{
-  this.consumerservice.GetRecentTransactions(username).subscribe((transaction:IRecenttransactions)=>{
-    this.getrecenttransactions=transaction;
-    console.log(this.getrecenttransactions);
-  })
+  getTransactions(username: string) {
+    this.consumerservice.GetRecentTransactions(username).subscribe((transaction: IRecentTransactions) => {
+      this.getrecenttransactions = transaction;
+      console.log(this.getrecenttransactions);
+    }, error => {
+      window.alert(error);
+      this.router.navigate(["/home/"]);
+    })
+  }
 
-}
-
-  ngOnInit(): void{  
-  this.username= this.router.snapshot.paramMap.get('id');
-  this.getCard(this.username);
-  this.getCredit(this.username);
-  this.getProducts(this.username);
-  this.getTransactions(this.username);   
-  }  
+  ngOnInit(): void {
+    this.username = this.activatedRoute.snapshot.paramMap.get('id');
+    this.getCard(this.username);
+    this.getCredit(this.username);
+    this.getProducts(this.username);
+    this.getTransactions(this.username);
+  }
 
 }

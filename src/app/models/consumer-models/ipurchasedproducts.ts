@@ -1,6 +1,6 @@
-export interface IPurchasedproducts{
+export interface IPurchasedProducts{
     ProductName: string;
     PurchaseDate: Date;
-    ProductCost: number;
+    OrderAmount: number;
     AmountPaid: number;
 }

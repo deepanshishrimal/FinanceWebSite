@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
@@ -16,8 +17,12 @@ import { AdminConsumerEditComponent } from './admin-consumer-edit/admin-consumer
 import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+
 import { OrderService } from './services/product-serives/order.service';
 import { ProductService } from './services/product-serives/product.service';
+import { ConsumerServiceService } from './services/consumer-services/consumer-service.service';
+
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,9 @@ import { ProductService } from './services/product-serives/product.service';
   ],
   providers: [
     OrderService,
-    ProductService
+    ProductService,
+    ConsumerServiceService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
