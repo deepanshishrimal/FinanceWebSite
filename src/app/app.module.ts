@@ -18,6 +18,9 @@ import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashbo
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
+import { OrderService } from './services/product-serives/order.service';
+import { ProductService } from './services/product-serives/product.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,10 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    OrderService,
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
