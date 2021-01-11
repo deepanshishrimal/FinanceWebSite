@@ -1,1 +1,58 @@
-<p>consumer-dashboard works!</p>
+<div class="container">          
+    <nav class="navbar navbar-default">
+        <ul class ="nav navbar-nav">
+          <li>
+            <a [routerLink] = "['/product/product-list']" >PRODUCTS</a>
+          </li>
+        </ul>
+      </nav>
+    <h2 style="color:rgb(172, 14, 14); text-align: center;"> CONSUMER DASHBOARD </h2>    
+    <br><br>  
+    <div class="boxed" style="border:3px; border-style:solid; margin: auto; height:150px ;width: 300px;
+    border-color:black; padding: 1em;">
+        CARD NUMBER: {{getcard?.CardNumber}}<br>
+        NAME: {{getcard?.Name}}<br>
+        VALID TILL: {{getcard?.Validity}}<br>
+        CARD TYPE: {{getcard?.CardType}}<br>
+        <div *ngIf='getcard?.Activated' style="background-color: green;">ACTIVATED</div>
+        <div *ngIf='!getcard?.Activated' style="background-color: red;">NOT ACTIVATED</div>
+    </div>
+    <br><br>
+    <div>
+        TOTAL CREDITS: {{getcredit?.TotalCredit}}<br>
+        CREDITS USED: {{getcredit?.CreditUsed}}<br>
+        REMAINING CREDITS: {{getcredit?.RemainingCredit}}<br>
+    </div>
+    <br><br>
+    <table class="table" style="margin: auto;">PRODUCTS PURCHASED
+        <tr ngclass="btn-primary">  
+        <th class="tbl2">PRODUCT ID</th>  
+        <th class="tbl2">PURCHASE DATE</th>  
+        <th class="tbl2">PRODUCT COST</th>  
+        <th class="tbl2">AMOUNT PAID</th>  
+        </tr>  
+
+        <tr *ngFor="let product of getpurchasedproducts">  
+        <td class="tbl2">{{product?.ProductName}}</td>  
+        <td class="tbl2">{{product?.PurchaseDate | date }}</td>  
+        <td class="tbl2">{{product?.ProductCost}}</td>  
+        <td class="tbl2">{{product?.AmountPaid}}</td>  
+        </tr>
+    </table>
+<br><br>
+    <table class="table"style="margin: auto;" >RECENT TRANSACTIONS
+
+        <tr ngclass="btn-primary">  
+        <th class="tbl2">PRODUCT ID</th>  
+        <th class="tbl2">PRODUCT NAME</th>  
+        <th class="tbl2">DATE</th>  
+        <th class="tbl2">AMOUNT PAID</th>  
+        </tr>  
+        <tr *ngFor="let transaction of getrecenttransactions">  
+        <td class="tbl2">{{transaction?.ProductID}}</td>  
+        <td class="tbl2">{{transaction?.ProductName}}</td>
+        <td class="tbl2">{{transaction?.DeductionDate | date }}</td>    
+        <td class="tbl2">{{transaction?.EMIAmount}}</td>  
+        </tr>
+    </table>
+</div>
