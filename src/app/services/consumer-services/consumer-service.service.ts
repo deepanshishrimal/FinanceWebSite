@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError } from 'rxjs/operators';
 import { Observable, of, throwError } from 'rxjs';
 
-import { ICard } from 'src/app/models/consumer-models/ICard';
-import { IPurchasedProducts } from 'src/app/models/consumer-models/IPurchasedProducts';
-import { ICredit } from 'src/app/models/consumer-models/ICredit';
-import { IRecentTransactions } from 'src/app/models/consumer-models/IRecentTransactions';
+import { ICard } from 'src/app/models/consumer-models/icard';
+import { IPurchasedProducts } from 'src/app/models/consumer-models/ipurchasedproducts';
+import { ICredit } from 'src/app/models/consumer-models/icredit';
+import { IRecentTransactions } from 'src/app/models/consumer-models/irecenttransactions';
 
 @Injectable({
   providedIn: 'root'

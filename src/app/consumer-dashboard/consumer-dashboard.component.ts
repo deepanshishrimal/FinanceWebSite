@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ConsumerServiceService } from '../services/consumer-services/consumer-service.service';
 
-import { ICard } from '../models/consumer-models/ICard';
-import { ICredit } from '../models/consumer-models/ICredit';
-import { IPurchasedProducts } from '../models/consumer-models/IPurchasedProducts';
-import { IRecentTransactions } from '../models/consumer-models/IRecentTransactions';
+import { ICard } from '../models/consumer-models/icard';
+import { ICredit } from '../models/consumer-models/icredit';
+import { IPurchasedProducts } from '../models/consumer-models/ipurchasedproducts';
+import { IRecentTransactions } from '../models/consumer-models/irecenttransactions';
 
 @Component({
   selector: 'app-consumer-dashboard',
