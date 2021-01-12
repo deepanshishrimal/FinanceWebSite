@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
@@ -18,6 +18,14 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { AdminConsumerDeleteComponent } from './admin-consumer-delete/admin-consumer-delete.component';
+import { AdminVerifyComponent } from './admin-verify/admin-verify.component';
+
+import { OrderService } from './services/product-serives/order.service';
+import { ProductService } from './services/product-serives/product.service';
+import { ConsumerServiceService } from './services/consumer-services/consumer-service.service';
+
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -35,6 +43,8 @@ import { UserloginComponent } from './userlogin/userlogin.component';
     ChangePasswordComponent,
     AdminloginComponent,
     UserloginComponent
+    AdminConsumerDeleteComponent,
+    AdminVerifyComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,12 @@ import { UserloginComponent } from './userlogin/userlogin.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    OrderService,
+    ProductService,
+    ConsumerServiceService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

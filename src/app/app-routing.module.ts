@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AdminConsumerDeleteComponent } from './admin-consumer-delete/admin-consumer-delete.component';
 import { AdminConsumerEditComponent } from './admin-consumer-edit/admin-consumer-edit.component';
 import { AdminConsumerVerifyComponent } from './admin-consumer-verify/admin-consumer-verify.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -9,19 +9,24 @@ import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashbo
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductOrderComponent } from './product-order/product-order.component';
 import { RegisterComponent } from './register/register.component';
+import {AdminVerifyComponent }from './admin-verify/admin-verify.component';
 
 const routes: Routes = [
+  {path:"admin-verify",component:AdminVerifyComponent},
+  {path :"admin-consumer-delete/:id",component:AdminConsumerDeleteComponent},
   { path: "admin-consumer-edit/:id", component: AdminConsumerEditComponent },
   { path: "admin-consumer-verify", component: AdminConsumerVerifyComponent },
   { path: "admin-dashboard", component: AdminDashboardComponent },
   { path: "change-password", component: ChangePasswordComponent },
-  { path: "consumer-dashboard", component: ConsumerDashboardComponent },
+  { path: "consumer-dashboard/:id", component: ConsumerDashboardComponent },
   { path: "forget-password", component: ForgetPasswordComponent },
   { path: "home", component: HomeComponent },
   { path: "product/:id", component: ProductComponent },
+  { path: "login", component: LoginComponent },
   { path: "product-order/:id", component: ProductOrderComponent },
   { path: "product-list", component: ProductListComponent },
   { path: "register", component: RegisterComponent },
