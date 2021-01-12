@@ -17,6 +17,8 @@ import { AdminConsumerEditComponent } from './admin-consumer-edit/admin-consumer
 import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AdminConsumerDeleteComponent } from './admin-consumer-delete/admin-consumer-delete.component';
+import { AdminVerifyComponent } from './admin-verify/admin-verify.component';
 
 import { OrderService } from './services/product-serives/order.service';
 import { ProductService } from './services/product-serives/product.service';
@@ -38,7 +40,9 @@ import { AuthGuard } from './guards/auth.guard';
     AdminConsumerEditComponent,
     ConsumerDashboardComponent,
     ForgetPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AdminConsumerDeleteComponent,
+    AdminVerifyComponent
   ],
   imports: [
     BrowserModule,
