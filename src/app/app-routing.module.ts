@@ -8,7 +8,6 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductOrderComponent } from './product-order/product-order.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: "consumer-dashboard", component: ConsumerDashboardComponent },
   { path: "forget-password", component: ForgetPasswordComponent },
   { path: "home", component: HomeComponent },
-  { path: "login", component: LoginComponent },
   { path: "product/:id", component: ProductComponent },
   { path: "product-order/:id", component: ProductOrderComponent },
   { path: "product-list", component: ProductListComponent },
