@@ -17,6 +17,8 @@ import { AdminConsumerEditComponent } from './admin-consumer-edit/admin-consumer
 import { ConsumerDashboardComponent } from './consumer-dashboard/consumer-dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AdminConsumerDeleteComponent } from './admin-consumer-delete/admin-consumer-delete.component';
+import { AdminVerifyComponent } from './admin-verify/admin-verify.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     AdminConsumerEditComponent,
     ConsumerDashboardComponent,
     ForgetPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AdminConsumerDeleteComponent,
+    AdminVerifyComponent
   ],
   imports: [
     BrowserModule,

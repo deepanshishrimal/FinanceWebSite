@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AdminConsumerDeleteComponent } from './admin-consumer-delete/admin-consumer-delete.component';
 import { AdminConsumerEditComponent } from './admin-consumer-edit/admin-consumer-edit.component';
 import { AdminConsumerVerifyComponent } from './admin-consumer-verify/admin-consumer-verify.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -13,8 +13,11 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductOrderComponent } from './product-order/product-order.component';
 import { RegisterComponent } from './register/register.component';
+import {AdminVerifyComponent }from './admin-verify/admin-verify.component';
 
 const routes: Routes = [
+  {path:"admin-verify",component:AdminVerifyComponent},
+  {path :"admin-consumer-delete/:id",component:AdminConsumerDeleteComponent},
   { path: "admin-consumer-edit/:id", component: AdminConsumerEditComponent },
   { path: "admin-consumer-verify", component: AdminConsumerVerifyComponent },
   { path: "admin-dashboard", component: AdminDashboardComponent },
